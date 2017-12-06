@@ -1,0 +1,19 @@
+POST Cliente: {"nome":"dasd", 
+"cpf":"23423",
+"telefone":"4323",
+"email":"adasdacx@com"}
+
+POST Produto: {"nome":"dsf", 
+"preco":"55",
+"descricao":"4323",
+"imagem":"adasdacx@com"}
+
+POST Chamado: {"cliente":{"id":"151"}, 
+"msg":"55"}
+
+POST Venda:  {"cliente":{"id":"51"},
+ 	"produtos": [
+        {"id": "451"},
+        {"id": "701"}
+     ] 
+ }
