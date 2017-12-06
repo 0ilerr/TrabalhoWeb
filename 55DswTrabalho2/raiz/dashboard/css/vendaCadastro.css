@@ -1,0 +1,10 @@
+form div {
+    margin-top: 1%;
+}
+#btnAddProduto {
+    float: right;
+}
+
+#labelTotal{
+    margin-left: 10%;
+}

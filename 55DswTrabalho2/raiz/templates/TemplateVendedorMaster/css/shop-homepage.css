@@ -1,0 +1,21 @@
+
+body {
+  padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+#footerVendedoMaster{
+  color: #fff;
+    height: 290px;
+}
+#cardLogo{
+    margin-top: 2%;
+}
+#containerModalProduto{
+  background-color: #f5f5f5;
+}
