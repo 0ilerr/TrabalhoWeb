@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>55DSW Trabalho 1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" defer></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/scriptIndex.js" defer></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">EulerDSWRafael</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li id="cadastroBtn" class="disabled-item" type="button" ><a href="#"><span class="glyphicon glyphicon-user"></span> Cadastre-se</a></li>
+                <li id="loginBtn" type="button"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Entrar</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Modal Login-->
+<div id="modal_login" class="modal fade" hidden="true" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header" style="padding:35px 50px;">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4><span class="glyphicon glyphicon-lock"></span> Entrar</h4>
+            </div>
+            <div class="modal-body" style="padding:40px 50px;">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="usremail"><span class="glyphicon glyphicon-user"></span> Email do Usuário</label>
+                        <input id="usuarioEmail" type="text" class="form-control" id="usremail" placeholder="Insira seu email">
+                    </div>
+                    <div class="form-group">
+                        <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Senha</label>
+                        <input id="usuarioSenha" type="password" class="form-control" id="psw" placeholder="Insira sua senha">
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="" checked>Lembre-se</label>
+                    </div>
+                    <button id="btnModalLogin" type="submit" class="btn btn-block"><span class="glyphicon glyphicon-off"></span> Entrar</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button id="btnModalCancel" type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+                <p>Esqueceu a <a href="#">Senha?</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Cadastro-->
+<div id="modal_cadastro" class="modal fade" tabindex="-1" role="dialog" hidden="true" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h3 id="myModalLabel">Cadastro</h3>
+            </div>
+            <div id="modal_cadastro_content" class="modal-body">
+                <form class="form-horizontal col-sm-12">
+                        <div class="form-group"><label>Nome da Empresa</label><input id="cadastro_nome_empresa" class="form-control required" placeholder="Digite seu nome" data-placement="top" data-trigger="manual" required="3" type="text"></div>
+                        <div class="form-group"><label>Email</label><input id="cadastro_email_empresa" class="form-control" placeholder="Digite seu e-mail" data-placement="top" data-trigger="manual"></input></div>
+                        <div class="form-group"><label>Endereco</label><textarea id="cadastro_endereco_empresa" class="form-control" placeholder="Descreva seu endereço" data-placement="top" data-trigger="manual"></textarea></div>
+                        <div class="form-group"><label>Slogan</label><textarea id="cadastro_slogan_empresa" class="form-control" placeholder="Informe a frase de efeito" data-placement="top" data-trigger="manual"></textarea></div>
+                        <div class="form-group"><label>Mídia Social</label><input id="cadastro_midiasocial_empresa" class="form-control" placeholder="URL do endereço de midia social" data-placement="top" data-trigger="manual" data-content="Must be a valid e-mail address (user@gmail.com)" type="text"></div>
+                        <div class="form-group"><label>Contato</label><input id="cadastro_telefone_empresa" class="form-control" placeholder="Informe seu telefone" data-placement="top" data-trigger="manual" data-content="Deve ser um número válido (999-999-9999)" type="text"></div>
+                        <div class="form-group"><label>Senha</label><input id="cadastro_senha_empresa" class="form-control"  placeholder="Digite sua senha" data-placement="top" data-trigger="manual" data-content="Deve ser uma senha válida" type="password"></div>
+                </form>
+            </div>
+            <div id="modal_cadastro_footer" class="modal-footer">
+                    <button id="btn_enviar_modal_cadastro" type="button" class="btn btn-success pull-right">Enviar</button>
+                    <button id="btn_cancelar_modal_cadastro" class="btn btn-danger" type="button" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 id="titulo_templates">Escolha seu template e cadastre-se!!!</h1>
+<div id="templates">
+    <form class="form-inline">
+        <div class="form-group" id="template_1">
+            <a href="template_1index.html"><img src="../img/23757683_1992267547653828_811471719_o.png" alt="Template OnePage"></a>
+            <legend>
+                <input type="radio" value="1" name="templateRadio">
+                O favorito
+            </legend>
+        </div>
+            <div class="form-group" id="template_2">
+                <a href="template_2DesingModernoindex.html"><img id="template_2_img" src="../img/23760201_1992631390950777_1887707193_o.png" alt="Dashboard estatisico"></a>
+            <legend>
+                <input type="radio" value="2" name="templateRadio">
+                 Desing Moderno
+            </legend>
+        </div>
+        <div class="form-group" id="template_3">
+            <a href="template_3VendedorMasterindex.html"><img src="../img/68747470733a2f2f7374617274626f6f7473747261702e636f6d2f6173736574732f696d672f74656d706c617465732f73686f702d686f6d65706167652e6a7067.jpg" alt="template Vendedor master"></a>
+            <legend>
+                <input type="radio" value="3" name="templateRadio">
+                 Vendedor Master
+            </legend>
+        </div>
+    </form>
+</div>
+
+<div id="container_footer" class="container">
+    <div class="row" style="text-align:center;">
+        <h2>Começe a vender na web agora mesmo</h2>
+    </div>
+    <!----------- Footer ------------>
+    <footer class="footer-bs">
+        <div class="row">
+            <div class="col-md-4 footer-brand animated fadeInLeft">
+                <h2>Websites para Lojas</h2>
+                <p>Um Website planejado, deixando á disposição do cliente, escolher qual a melhor opção encaixa com o seu negócio!</p>
+                <p>© 2017 BR SC</p>
+            </div>
+            <div class="col-md-4 footer-nav animated fadeInUp">
+                <h4>Sobre</h4>
+                <p>
+                    Somos acadêmicos da Universida Estadual de Santa Catarina, em busca de ganhar espaço no mercado de trabalho
+                    criando formas simples para soluções de problemas antes dificíl, como ter um website, cadastrar e
+                    vender os seus produtos.
+                </p>
+            </div>
+            <div id="footerConverse" class="col-md-4 footer-social animated fadeInDown">
+                <h4>Converse Conosco</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/euler.giachini.5">Facebook - Euler</a></li>
+                    <li><a href="https://www.facebook.com/rafael.tenfen.71">Facebook - Rafael</a></li>
+                    <li>(47)99964-2053</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <section id="footerProducer"><p>Produzido por <strong>Rafael Tenfen e Euler Giachini</strong> </p></section>
+</div>
+</body>
+</html>
