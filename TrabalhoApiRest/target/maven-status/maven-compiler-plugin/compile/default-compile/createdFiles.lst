@@ -1,0 +1,8 @@
+br\udesc\ceavi\deso\trabalho\model\Produto_.class
+br\udesc\ceavi\deso\trabalho\model\exceptions\IllegalOrphanException.class
+br\udesc\ceavi\deso\trabalho\model\Cliente_.class
+br\udesc\ceavi\deso\trabalho\model\exceptions\RollbackFailureException.class
+br\udesc\ceavi\deso\trabalho\model\exceptions\NonexistentEntityException.class
+br\udesc\ceavi\deso\trabalho\model\Produto.class
+br\udesc\ceavi\deso\trabalho\model\Venda_.class
+br\udesc\ceavi\deso\trabalho\model\exceptions\PreexistingEntityException.class
